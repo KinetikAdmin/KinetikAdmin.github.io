@@ -1,0 +1,155 @@
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sticky {
+    height: 70px;
+    padding: 15px 0;
+}
+
+#value_proposition {
+    background-image: url('./img/team.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.65;
+    height: 100vh;
+}
+
+.logo {
+    padding: 10px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.logo.hidden {
+    display: none;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.product-table {
+    margin: 0 auto;
+    /* center the table */
+    border-collapse: separate;
+    border-spacing: 30px;
+    /* space between cells */
+}
+
+.product-table td {
+    width: 200px;
+    /* adjust the size of your squares */
+    height: 200px;
+    border: 5px solid #223651;
+    /* border color */
+    border-radius: 10px;
+    /* rounded corners */
+    background-color: #FB9C2A;
+    /* cell color */
+}
+
+
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #223651;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FB9C2A;
+    text-decoration: underline;
+}
+
+.scrollable {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu.closer {
+    margin-top: 10px;
+}
+
+.small-logo {
+    height: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-right: 10px;
+    padding-right: 15px;
+}
+
+.small-logo.visible {
+    opacity: 1;
+}
+
+
+/* start responsive code */
+@media screen and (max-width: 800px) {
+    /* Style adjustments for viewports up to 800px */
+
+    .header-inner,
+    nav ul {
+        flex-direction: column;
+    }
+
+    .logo {
+        height: 80px;
+    }
+
+    .small-logo {
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    .product-table td {
+        width: 150px;
+        height: 150px;
+    }
+}
