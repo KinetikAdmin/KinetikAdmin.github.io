@@ -1,81 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Kinetik Solutions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        #logo {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #navbar {
+            background: #FFF;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        #navbar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        #navbar-container img {
+            display: none;
+            margin-right: 10px;
+        }
+
+        #navbar.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        #navbar.sticky #navbar-container img {
+            display: block;
+        }
+
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+            justify-content: center;
+        }
+
+        #navbar ul li {
+            margin: 0 10px;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            font-family: 'Anonymous Pro', monospace;
+            font-weight: bold;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #223651;
+            transition: color 0.3s;
+        }
+
+        #navbar ul li a:hover {
+            color: #FB9C2A;
+            text-decoration: underline;
+        }
+
+        /* Responsive layout  */
+        @media (max-width: 768px) {
+            #logo {
+                display: none;
+            }
+
+            #navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #navbar-container {
+                flex-direction: column;
+            }
+
+            #navbar ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            #navbar ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            #navbar-container img {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+
+        .content {
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .content h2 {
+            margin-top: 100px;
+        }
+
+        .bg-image {
+            background-image: url('./img/team.avif');
+            opacity: 0.65;
+            background-size: cover;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .bg-image::after {
+            content: "";
+            background: rgba(0, 0, 0, 0.65);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .text-box {
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            color: #000000;
+            text-align: center;
+            max-width: 80%;
+            position: relative;
+            z-index: 1;
+        }
+
+        #section1 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
-    <header id="header">
+    <div id="logo">
+        <img src="./img/brand/ks_logo5_selected.png" alt="Kinetik Solutions Logo" height="100px">
+    </div>
 
-        <div class="header-inner">
-            <div class="logo-container">
-                <img src="./img/brand/ks_logo5_selected.png" height="100px" alt="logo" class="logo">
-            </div>
-            <nav id="menu">
-                <ul>
-                    <li><img src="./img/brand/ks_logo5_selected.png" height="40px" alt="small-logo"
-                            class="small-logo"><a href="#value_proposition">Approche</a></li>
-                    <li><a href="#products_services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#apropos">A Propos</a></li>
-                    <li><a href="">Blog</a></li>
-                </ul>
-            </nav>
+    <nav id="navbar">
+        <div id="navbar-container">
+            <img src="./img/brand/ks_logo5_selected.png" height="42px" alt="Nav Image">
+            <ul>
+                <li><a href="#section1">Approche</a></li>
+                <li><a href="#section2">Services</a></li>
+                <li><a href="#section3">Contact</a></li>
+                <li><a href="#section4">A Propos</a></li>
+                <li><a href="#section5">Blogue</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <section id="value_proposition" class="scrollable">
-        <h1>Your Value Proposition Highlights</h1>
-        <p>“Kinetik Solutions aide les petites et moyennes entreprises à améliorer leur efficacité opérationnelle en
-            évaluant et optimisant leurs processus grâce à des solutions personnalisées, basées sur les données, et à
-            l'aide d'outils informatiques et de l'IA. Notre approche est centrée sur l'humain, favorisant la prise de
-            décisions éclairées et le développement des compétences. Contrairement aux cabinets de conseil
-            traditionnels, nous combinons une attention personnalisée et une expertise approfondie dans les applications
-            d'IA de pointe. Dans un monde où chaque avantage compte pour prendre de l'avance sur la concurrence, nous
-            permettons à nos clients de gagner du temps, de réduire les coûts et de rester compétitifs dans un marché
-            qui évolue rapidement chaque jour.</p>
-    </section>
+    <div id="section1" class="content">
+        <div class="bg-image">
+            <div class="text-box">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper odio quis nisl consectetur, in
+                    volutpat urna aliquet. Curabitur a risus nisl. Fusce id ipsum dolor.</p>
+            </div>
+        </div>
+    </div>
 
-    <section id="products_services" class="scrollable">
-        <h1>Your Products and Services</h1>
-        <table class="product-table">
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-    </section>
+    <div id="section2" class="content">
+        <h2>Ipsum</h2>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </div>
 
-    <section id="contact" class="scrollable">
-        <h2>Contact</h2>
-        <form action="/submit_form" method="post">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br>
+    <div id="section3" class="content">
+        <h2>Dolor</h2>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
+    <div id="section4" class="content">
+        <h2>Sit</h2>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.</p>
+    </div>
 
-            <label for="subject">Subject:</label><br>
-            <input type="text" id="subject" name="subject" required><br>
+    <div id="section5" class="content">
+        <h2>Amet</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam.</p>
+    </div>
 
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br>
+    <script>
+        window.onscroll = function () { stickNavbar() };
 
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
 
-
-    <script src="script.js"></script>
+        function stickNavbar() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
 </body>
 
 </html>
