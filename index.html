@@ -75,7 +75,7 @@
             font-size: 24px;
             text-transform: uppercase;
             color: #223651;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
 
         #navbar ul li a:hover {
@@ -127,6 +127,18 @@
 
         }
 
+        .content h3 {
+            font-family: 'Anonymous Pro', monospace;
+            font-weight: bold;
+            color: #223651;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+
+
+        }
+
         .bg-image {
             background-image: url('./img/team.avif');
             opacity: 0.65;
@@ -162,6 +174,19 @@
             z-index: 1;
         }
 
+        .s2-text-box {
+            background: rgba(22, 36, 51, 0.65);
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 24px;
+            padding: 20px;
+            color: #223651;
+            text-align: center;
+            max-width: 80%;
+            height: 820px;
+            margin: 0 auto;
+            position: relative;
+
+        }
 
         .s4-text-box {
             background: rgba(22, 36, 51, 0.65);
@@ -179,6 +204,88 @@
             margin: 0;
             padding: 0;
 
+        }
+
+        .s2_box1 {
+            left: 20px;
+            position: absolute;
+            width: 700px;
+            height: 180px;
+            background-color: rgba(255, 255, 255, 0.65)
+        }
+
+        .s2_box2 {
+            position: absolute;
+            right: 20px;
+            top: 220px;
+            width: 700px;
+            height: 180px;
+            background-color: rgba(255, 255, 255, 0.65);
+        }
+
+        .s2_box3 {
+            left: 20px;
+            position: absolute;
+            top: 420px;
+            width: 700px;
+            height: 180px;
+            background-color: rgba(255, 255, 255, 0.65)
+        }
+
+        .s2_box4 {
+            position: absolute;
+            right: 20px;
+            top: 620px;
+            width: 700px;
+            height: 180px;
+            background-color: rgba(255, 255, 255, 0.65);
+        }
+
+        .service_list {
+            font-size: 12px;
+            text-align: left;
+
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+
+        .contact-form-container {
+            font-family: 'Anonymous Pro', monospace;
+            background-color: #223651;
+            color: #FFF;
+            padding: 20px;
+            width: 50%;
+            margin: auto;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #FB9C2A;
+            background-color: #FFF;
+            color: #223651;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #FB9C2A;
+            border: none;
+            color: #FFF;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #FFF;
+            color: #223651;
         }
     </style>
     <title>Kinetik Solutions</title>
@@ -216,27 +323,64 @@
 
     <div id="section2" class="content">
         <h2>&lt Services &gt</h2>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+        <div class="s2-text-box">
+            <div class="s2_box1">
+                <h3>Analyse et optimisation de l'efficacité opérationnelle</h3>
+                <ul class="service_list">
+                    <li>Diagnostic de l'efficacité opérationnelle</li>
+                    <li>Identification des silos et obstacles à l'efficacité</li>
+                    <li>Propositions pour l'amélioration de la communication et de la collaboration</li>
+                    <li>Mise en place de KPIs pour mesurer l'efficacité</li>
+                    <li>Analyse des processus existants</li>
+                    <li>Identification des goulets d'étranglement dans les processus</li>
+                    <li>Suggestions d'améliorations pour les processus</li>
+                    <li>Mise en place d'indicateurs pour le suivi des processus</li>
+                </uL>
+            </div>
+            <div class="s2_box2">
+                <h3>Numérisation et automatisation</h3>
+            </div>
+            <div class="s2_box3">
+                <h3>Interopérabilité et intelligence d'affaires</h3>
+            </div>
+            <div class="s2_box4">
+                <h3>Formation et accompagnement</h3>
+            </div>
+        </div>
+
     </div>
 
     <div id="section3" class="content">
         <h2>&lt Contact &gt</h2>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+        <div class="contact-form-container">
+            <form class="contact-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+
+
+
     </div>
 
     <div id="section4" class="content">
         <h2>&lt A Propos &gt</h2>
         <div class="s4-text-box">
             <p>Née en 2023, Kinetik Solutions redéfinit l'interaction entre l'humain, la technologie et les processus.
-                Nous
-                nous distinguons en utilisant efficacement la technologie et les processus pour libérer le potentiel
-                humain,
-                plutôt que de le limiter. Notre objectif est de réhabiliter l'impact humain réel, souvent entravé par
-                des
-                outils et des processus mal conçus ou mal utilisés. Avec Kinetik Solutions, l'humain retrouve sa place
-                au
-                cœur de la transformation.</p>
+                Nous nous distinguons en utilisant efficacement la technologie et les processus pour libérer le
+                potentiel
+                humain plutôt que de le limiter. Notre objectif est de réhabiliter l'impact humain réel, souvent entravé
+                par
+                des outils et des processus mal conçus ou mal utilisés. Avec Kinetik Solutions, l'humain retrouve sa
+                place
+                au cœur de la transformation.</p>
         </div>
     </div>
 
