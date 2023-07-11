@@ -1,264 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Menu Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-        }
-
-        #logo {
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #navbar {
-            background: #FFF;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        #navbar-container {
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
             display: flex;
             justify-content: center;
-            align-items: center;
-            width: 100%;
         }
 
-        #navbar-container img {
+        .navbar .container {
+            position: relative;
+        }
+
+        .navbar-brand.small-logo {
+            position: absolute;
+            left: 0;
             display: none;
-            margin-right: 10px;
 
+            height: 42px;
+            transition: opacity 0.3s ease;
         }
 
-        #navbar.sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-        }
-
-        #navbar.sticky #navbar-container img {
+        .navbar.sticky .navbar-brand.small-logo {
             display: block;
 
         }
 
-        #navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: inline-flex;
-            justify-content: center;
-        }
-
-        #navbar ul li {
-            margin: 0 10px;
-        }
-
-        #navbar ul li a {
-            text-decoration: none;
-            font-family: 'Anonymous Pro', monospace;
-            font-weight: bold;
-            font-size: 24px;
-            text-transform: uppercase;
-            color: #223651;
-            transition: color 0.3s;
-        }
-
-        #navbar ul li a:hover {
-            color: #FB9C2A;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            #logo {
-                display: none;
-            }
-
-            #navbar {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            #navbar-container {
-                flex-direction: column;
-            }
-
-            #navbar ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            #navbar ul li {
-                text-align: center;
-                margin: 10px 0;
-            }
-
-            #navbar-container img {
-                display: block;
-                margin-bottom: 10px;
-            }
-        }
-
-
-
-        .content h2 {
-            margin-top: 100px;
-            font-family: 'Anonymous Pro', monospace;
-            font-weight: bold;
-            color: #223651;
-            font-size: 24px;
-            text-align: center;
-            text-transform: uppercase;
-
-
-        }
-
-        .bg-image {
-            background-image: url('./img/team.avif');
-            opacity: 0.65;
-            background-size: cover;
-            background-position: center;
-            width: 100vw;
-            min-height: 50vh;
+        .navbar .navbar-collapse {
             display: flex;
-            justify-content: center;
             align-items: center;
+        }
+
+        .navbar .navbar-collapse .navbar-brand {
+            order: 1;
+        }
+
+        .navbar .navbar-collapse .navbar-nav {
+            order: 2;
+            margin-left: 10px;
+            /* Space between the logo and the navbar */
+        }
+
+        .large-logo-container {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .navbar-nav .nav-item:first-child .nav-link {
             position: relative;
         }
 
-        .bg-image::after {
-            content: "";
-            background: rgba(0, 0, 0, 0.65);
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        .s1-text-box {
-            background: rgba(255, 255, 255, 0.65);
-            font-family: 'Anonymous Pro', monospace;
-            font-size: 24px;
+        section {
+            height: 500px;
+            background-color: #f5f5f5;
             padding: 20px;
-            color: #000000;
             text-align: center;
-            max-width: 80%;
-            position: relative;
-            z-index: 1;
         }
 
-
-        .s4-text-box {
-            background: rgba(22, 36, 51, 0.65);
-            font-family: 'Anonymous Pro', monospace;
-            font-size: 24px;
-            padding: 20px;
-            color: #FFF;
-            text-align: center;
-            max-width: 80%;
-            margin: 0 auto;
-
+        .large-logo-container img {
+            max-height: 150px;
+            width: auto;
         }
 
-        .section1 {
-            margin: 0;
-            padding: 0;
-
+        @media (max-width: 992px) {
+            .navbar .navbar-brand.small-logo {
+                display: none;
+                /* Hide the small logo on small screens */
+            }
         }
     </style>
-    <title>Kinetik Solutions</title>
 </head>
 
 <body>
-    <div id="logo">
-        <img src="./img/brand/ks_logo5_selected.png" alt="Kinetik Solutions Logo" height="100px">
+    <div class="large-logo-container">
+        <img class="navbar-brand large-logo img-fluid" src="./img/brand/ks_logo5_selected.png" alt="Large Logo">
     </div>
 
-    <nav id="navbar">
-        <div id="navbar-container">
-            <img src="./img/brand/ks_logo5_selected.png" height="42px" alt="Nav Image">
-            <ul>
-                <li><a href="#section1">Approche</a></li>
-                <li><a href="#section2">Services</a></li>
-                <li><a href="#section3">Contact</a></li>
-                <li><a href="#section4">A Propos</a></li>
-                <li><a href="">Blogue</a></li>
-            </ul>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <img class="navbar-brand small-logo" src="./img/brand/ks_logo5_selected.png" alt="Small Logo">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#approach">Approche</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">A Propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blogue</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div id="section1" class="content">
-        <div class="bg-image">
-            <div class="s1-text-box">
-                <p>Kinetik Solutions, <strong>centré sur l'humain</strong>, améliore l'efficacité des PME avec des
-                    solutions personnalisées, basées sur les données et l'IA. Nous favorisons des décisions éclairées et
-                    le développement des compétesnces, tout en offrant une attention personnalisée et une expertise en
-                    IA. Avec nous, gagnez du temps, réduisez les coûts et restez compétitif dans un marché en évolution
-                    rapide.</p>
-            </div>
-        </div>
-    </div>
 
-    <div id="section2" class="content">
-        <h2>&lt Services &gt</h2>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-    </div>
+    <section id="approach">
+        <h2>Approche</h2>
+        <!-- Add content for Approach section -->
+    </section>
 
-    <div id="section3" class="content">
-        <h2>&lt Contact &gt</h2>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    </div>
+    <section id="services">
+        <h2>Services</h2>
+        <!-- Add content for Services section -->
+    </section>
 
-    <div id="section4" class="content">
-        <h2>&lt A Propos &gt</h2>
-        <div class="s4-text-box">
-            <p>Née en 2023, Kinetik Solutions redéfinit l'interaction entre l'humain, la technologie et les processus.
-                Nous
-                nous distinguons en utilisant efficacement la technologie et les processus pour libérer le potentiel
-                humain,
-                plutôt que de le limiter. Notre objectif est de réhabiliter l'impact humain réel, souvent entravé par
-                des
-                outils et des processus mal conçus ou mal utilisés. Avec Kinetik Solutions, l'humain retrouve sa place
-                au
-                cœur de la transformation.</p>
-        </div>
-    </div>
+    <section id="contact">
+        <h2>Contact</h2>
+        <!-- Add content for Contact section -->
+    </section>
+
+    <section id="about">
+        <h2>A Propos</h2>
+        <!-- Add content for About section -->
+    </section>
+
+    <section id="blog">
+        <h2>Blogue</h2>
+        <!-- Add content for Blog section -->
+    </section>
 
 
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap Bundle with Popper JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        window.onscroll = function () { stickNavbar() };
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
 
-        var navbar = document.getElementById("navbar");
-        var navbarImage = document.querySelector("#navbar-container img");
-        var sticky = navbar.offsetTop;
-
-        function stickNavbar() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky");
-
+            if (scrollTop > 50) { // Change this value to adjust when the logo appears
+                $('.navbar').addClass('sticky');
             } else {
-                navbar.classList.remove("sticky");
-
+                $('.navbar').removeClass('sticky');
             }
-        }
+        });
 
     </script>
+</body>
 
 </html>
