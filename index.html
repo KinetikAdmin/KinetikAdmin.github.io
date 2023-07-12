@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 
+<title>Kinetik Solutions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <head>
     <style>
         * {
@@ -355,13 +362,19 @@
 
         <div class="contact-form-container">
             <form class="contact-form">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message"></textarea><br>
-                <input type="submit" value="Submit">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="message" name="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
 
@@ -385,24 +398,24 @@
     </div>
 
 
+</body>
+<script>
+    window.onscroll = function () { stickNavbar() };
 
-    <script>
-        window.onscroll = function () { stickNavbar() };
+    var navbar = document.getElementById("navbar");
+    var navbarImage = document.querySelector("#navbar-container img");
+    var sticky = navbar.offsetTop;
 
-        var navbar = document.getElementById("navbar");
-        var navbarImage = document.querySelector("#navbar-container img");
-        var sticky = navbar.offsetTop;
+    function stickNavbar() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
 
-        function stickNavbar() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
 
-            } else {
-                navbar.classList.remove("sticky");
-
-            }
         }
+    }
 
-    </script>
+</script>
 
 </html>

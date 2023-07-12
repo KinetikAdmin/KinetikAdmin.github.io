@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sticky Menu Example</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anonymous+Pro&family=Merriweather:ital@0;1&family=Work+Sans:wght@400;500;800&display=swap"
+        rel="stylesheet">
+
     <style>
         .navbar {
             position: sticky;
@@ -13,10 +19,25 @@
             z-index: 100;
             display: flex;
             justify-content: center;
+
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .navbar.navbar-dark.bg-dark {
+
+            background-color: #4d4d4d !important;
+
         }
 
         .navbar .container {
             position: relative;
+
         }
 
         .navbar-brand.small-logo {
@@ -49,7 +70,7 @@
         }
 
         .large-logo-container {
-            background-color: #f5f5f5;
+            background-color: #fff;
             text-align: center;
             padding: 20px 0;
             transition: opacity 0.3s ease;
@@ -65,7 +86,7 @@
 
         section {
             height: 500px;
-            background-color: #f5f5f5;
+            background-color: #fff;
             padding: 20px;
             text-align: center;
         }
@@ -120,26 +141,75 @@
         </div>
     </nav>
 
+    <div class="container">
+        <div class="row justify-content-center">
+            <section id="approach" class="col-12 col-md-10 col-lg-8">
+                <h2>Approche</h2>
+                <p>Kinetik Solutions, <strong>centré sur l'humain</strong>, améliore l'efficacité des PME avec des
+                    solutions personnalisées, basées sur les données et l'IA. Nous favorisons des décisions éclairées et
+                    le développement des compétences, tout en offrant une attention personnalisée et une expertise en
+                    IA. Avec nous, gagnez du temps, réduisez les coûts et restez compétitif dans un marché en évolution
+                    rapide.</p>
+            </section>
+        </div>
 
-    <section id="approach">
-        <h2>Approche</h2>
-        <!-- Add content for Approach section -->
-    </section>
+        <div class="row justify-content-center">
+            <section id="services" class="col-12 col-md-10 col-lg-8">
+                <h2>Services</h2>
+                <h3>Analyse et optimisation de l'efficacité opérationnelle</h3>
+                <ul class="service_list">
+                    <li>Diagnostic de l'efficacité opérationnelle</li>
+                    <li>Identification des silos et obstacles à l'efficacité</li>
+                    <li>Propositions pour l'amélioration de la communication et de la collaboration</li>
+                    <li>Mise en place de KPIs pour mesurer l'efficacité</li>
+                    <li>Analyse des processus existants</li>
+                    <li>Identification des goulets d'étranglement dans les processus</li>
+                    <li>Suggestions d'améliorations pour les processus</li>
+                    <li>Mise en place d'indicateurs pour le suivi des processus</li>
+                </ul>
+            </section>
+        </div>
 
-    <section id="services">
-        <h2>Services</h2>
-        <!-- Add content for Services section -->
-    </section>
+        <div class="row justify-content-center">
+            <section id="contact" class="col-12 col-md-10 col-lg-8">
+                <h2>Contact</h2>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message:</label>
+                            <textarea class="form-control" id="message" name="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <!-- Add content for Contact section -->
-    </section>
+        <div class="row justify-content-center">
+            <section id="about" class="col-12 col-md-10 col-lg-8">
+                <h2>A Propos</h2>
+                <p>Née en 2023, Kinetik Solutions redéfinit l'interaction entre l'humain, la technologie et les
+                    processus.
+                    Nous nous distinguons en utilisant efficacement la technologie et les processus pour libérer le
+                    potentiel
+                    humain plutôt que de le limiter. Notre objectif est de réhabiliter l'impact humain réel, souvent
+                    entravé
+                    par
+                    des outils et des processus mal conçus ou mal utilisés. Avec Kinetik Solutions, l'humain retrouve sa
+                    place
+                    au cœur de la transformation.</p>
+            </section>
+        </div>
+    </div>
 
-    <section id="about">
-        <h2>A Propos</h2>
-        <!-- Add content for About section -->
-    </section>
 
     <section id="blog">
         <h2>Blogue</h2>
@@ -157,7 +227,7 @@
         $(window).scroll(function () {
             var scrollTop = $(this).scrollTop();
 
-            if (scrollTop > 50) { // Change this value to adjust when the logo appears
+            if (scrollTop > 150) { // Change this value to adjust when the logo appears
                 $('.navbar').addClass('sticky');
             } else {
                 $('.navbar').removeClass('sticky');
