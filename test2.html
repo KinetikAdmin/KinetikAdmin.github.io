@@ -13,6 +13,17 @@
         rel="stylesheet">
 
     <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            background-image: url("img/iStock-1333071682.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+
+
+        }
+
         .navbar {
             position: sticky;
             top: 0;
@@ -42,10 +53,9 @@
 
         .navbar-brand.small-logo {
             position: absolute;
-            left: 0;
             display: none;
-
-            height: 42px;
+            box-sizing: border-box;
+            height: 50px;
             transition: opacity 0.3s ease;
         }
 
@@ -70,7 +80,7 @@
         }
 
         .large-logo-container {
-            background-color: #fff;
+            background-color: transparent;
             text-align: center;
             padding: 20px 0;
             transition: opacity 0.3s ease;
@@ -86,7 +96,7 @@
 
         section {
             height: 500px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.5) !important;
             padding: 20px;
             text-align: center;
         }
@@ -94,6 +104,7 @@
         .large-logo-container img {
             max-height: 150px;
             width: auto;
+
         }
 
         @media (max-width: 992px) {
@@ -111,10 +122,9 @@
     </div>
 
 
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <img class="navbar-brand small-logo" src="./img/brand/ks_logo5_selected.png" alt="Small Logo">
+            <img class="navbar-brand small-logo" src="./img/brand/ks_logo5_white_s.svg" alt="Small Logo">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -140,7 +150,7 @@
             </div>
         </div>
     </nav>
-
+    <br>
     <div class="container">
         <div class="row justify-content-center">
             <section id="approach" class="col-12 col-md-10 col-lg-8">
@@ -152,7 +162,7 @@
                     rapide.</p>
             </section>
         </div>
-
+        <br>
         <div class="row justify-content-center">
             <section id="services" class="col-12 col-md-10 col-lg-8">
                 <h2>Services</h2>
@@ -169,7 +179,7 @@
                 </ul>
             </section>
         </div>
-
+        <br>
         <div class="row justify-content-center">
             <section id="contact" class="col-12 col-md-10 col-lg-8">
                 <h2>Contact</h2>
