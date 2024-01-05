@@ -5,20 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Contact Form</title>
-
     <style>
         body {
-
             background-color: #23313F;
             color: #ffffff;
+            font-family: 'Open Sans', sans-serif;
+            /* Choose a modern, easy-to-read font */
+        }
 
+        .container {
+            max-width: 75%;
+
+        }
+
+        h1 {
+            color: #ff6633;
+            font-weight: bold;
+            margin-bottom: 1rem;
+
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            /* Increase line spacing */
+            margin-bottom: 1rem;
+            /* Add more space below paragraphs */
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            border: 1px solid #fff;
+            border-radius: 5px;
+            /* Rounded corners */
+            background-color: #2c3e50;
+            /* Lighter than the body background */
+            padding: 10px;
+            /* More padding inside the fields */
+            margin-bottom: 1rem;
+            /* Add more space below input fields */
+        }
+
+        .btn-primary {
+            background-color: #e67e22;
+            /* Brighter, more inviting color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow */
+            transition: background-color 0.3s;
+            /* Smooth transition for hover */
+        }
+
+        .btn-primary:hover {
+            background-color: #d35400;
+            /* Slightly darker shade on hover */
+        }
+
+        form {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow for depth */
         }
     </style>
 </head>
-
-
 
 <body>
 
@@ -35,40 +91,42 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="container mt-5">
-                    <h1 class="text-center">Be the first to know!</h1>
-                    <p class="text-center">
-                        Welcome to <strong><span style="font-size: 16px;">Kinetik Solutions</span></strong> –
-                        your Gateway to AI-Powered Business Excellence!</p><br>
-                    <p>Subscribe now to be among the first to witness the future of operational efficiency
-                        with our revolutionary products: mPulse,&nbsp;Servo Chat and Servo AI.</p>
-                    <p>💫 Be a part of the exclusive circle that gets priority access to groundbreaking
-                        features.&nbsp;<br></p>
-                    <p>💫 Enjoy early bird discounts that reward your eagerness to innovate.<br></p>
-                    <p>Don't just stay updated; stay ahead with insights and updates tailor-made for
-                        industry leaders like you. Join the elite waiting list by subscribing to our
-                        newsletter today</p>
+                    <h1 class="text-center">Restez informés!</h1>
+                    <br>
+                    <p class="text-justified">
+                        Bienvenue chez <strong><span style="font-size: 18px;">Kinetik Solutions</span></strong>, votre
+                        partenaire stratégique pour l'excellence opérationnelle et l'innovation technologique.</p><br>
+                    <p>Nous nous spécialisons dans la consultation en gestion, la gestion des technologies de
+                        l'information, le développement d'applications sur mesure, et l'implantation de nouvelles
+                        technologies, notamment l'intelligence artificielle et des chatbots GPT personnalisés.</p>
+                    <p>Chez Kinetik, nous comprenons les défis uniques auxquels sont confrontées les PME dans un paysage
+                        commercial en évolution rapide. Notre mission est de vous accompagner dans votre parcours de
+                        transformation numérique.</p>
+                    <p>Nous vous invitons à vous inscrire pour recevoir des nouvelles de nos services et nous faire part
+                        de vos intérêts. Rejoignez notre communauté et soyez les premiers informés de nos dernières
+                        innovations et offres.</p>
                     <form id="subscribe-form">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="fields[name]" placeholder="Name"
+                            <label for="name" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="name" name="fields[name]" placeholder="Nom"
                                 autocomplete="given-name">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="fields[email]" placeholder="Email"
-                                autocomplete="email" required>
+                            <label for="email" class="form-label">Courriel</label>
+                            <input type="email" class="form-control" id="email" name="fields[email]"
+                                placeholder="Courriel" autocomplete="email" required>
                         </div>
                         <div class="mb-3">
-                            <p>You can unsubscribe anytime. For more details, review our <a
-                                    href="privacy_policy.html">Privacy
-                                    Policy</a>.</p>
+                            <p>Vous pouvez vous désinscrire à tout moment. Pour plus de détails, consultez notre <a
+                                    href="privacy_policy.html">Politique de confidentialité</a>.</p>
                         </div>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
                     </form>
                     <div id="thank-you" class="mt-3" style="display:none;">
-                        <h4>Thank you!</h4>
-                        <p>You have successfully joined our subscriber list.</p>
+                        <h4>Merci!</h4>
+                        <p>Vous vous êtes abonné avec succès à notre liste.</p>
                     </div>
+
                 </div>
             </div>
         </div>
